@@ -3,8 +3,8 @@ Documentation     Initial Setup and Validation for Login page
 ...               Variables and Credentials loaded from config files
 Library     BuiltIn
 Library     Collections
-Library      SeleniumLibrary
-Library     ../../scripts/config_setup.py
+Library     SeleniumLibrary
+Library    ../../scripts/config_setup.py
 Library     ../../scripts/vars.py
 
 

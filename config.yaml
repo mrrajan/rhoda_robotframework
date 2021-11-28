@@ -2,4 +2,4 @@ browser: chrome
 browser_options: ['--no-sandbox']
 environment: default
 screenshot: false
-AUT_URL:
+AUT_URL: https://oauth-openshift.apps.rrodfdeploy.lab.eng.blr.redhat.com/

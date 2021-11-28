@@ -1,72 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.9.9 on linux)" generated="20211128 12:10:28.776" rpa="false" schemaversion="2">
-<suite id="s1" name="RHODA RFW" source="/home/rravi/PycharmProjects/RHODA_RFW">
-<suite id="s1-s1" name="Tests" source="/home/rravi/PycharmProjects/RHODA_RFW/tests">
-<suite id="s1-s1-s1" name="Keywords" source="/home/rravi/PycharmProjects/RHODA_RFW/tests/Keywords">
-<suite id="s1-s1-s1-s1" name="Setup" source="/home/rravi/PycharmProjects/RHODA_RFW/tests/Keywords/setup.robot">
-<test id="s1-s1-s1-s1-t1" name="First Test">
-<kw name="Setup The Test Suite">
+<robot generator="Robot 4.1.2 (Python 3.9.9 on linux)" generated="20211128 22:12:56.735" rpa="false" schemaversion="2">
+<suite id="s1" name="Rhoda Robotframework" source="/home/rravi/PycharmProjects/rhoda_robotframework">
+<suite id="s1-s1" name="Tests" source="/home/rravi/PycharmProjects/rhoda_robotframework/tests">
+<suite id="s1-s1-s1" name="Test" source="/home/rravi/PycharmProjects/rhoda_robotframework/tests/Test">
+<suite id="s1-s1-s1-s1" name="TestLogin" source="/home/rravi/PycharmProjects/rhoda_robotframework/tests/Test/TestLogin.Robot">
+<kw name="Setup The Test Suite" library="setup" type="SETUP">
 <kw name="Log" library="BuiltIn">
 <arg>Setting up the Test Suite</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20211128 12:10:28.995" level="INFO">Setting up the Test Suite</msg>
-<status status="PASS" starttime="20211128 12:10:28.994" endtime="20211128 12:10:28.995"/>
+<msg timestamp="20211128 22:12:56.937" level="INFO">Setting up the Test Suite</msg>
+<status status="PASS" starttime="20211128 22:12:56.937" endtime="20211128 22:12:56.937"/>
 </kw>
 <kw name="Set Library Search Order" library="BuiltIn">
 <arg>SeleniumLibrary</arg>
 <doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
-<status status="PASS" starttime="20211128 12:10:28.995" endtime="20211128 12:10:28.995"/>
+<status status="PASS" starttime="20211128 22:12:56.937" endtime="20211128 22:12:56.937"/>
 </kw>
 <kw name="Load Config Variables" library="config_setup">
-<msg timestamp="20211128 12:10:28.997" level="INFO">${browser} = chrome</msg>
-<msg timestamp="20211128 12:10:28.998" level="INFO">${browser_options} = ['--no-sandbox']</msg>
-<msg timestamp="20211128 12:10:29.000" level="INFO">${environment} = default</msg>
-<msg timestamp="20211128 12:10:29.001" level="INFO">${screenshot} = False</msg>
-<msg timestamp="20211128 12:10:29.002" level="INFO">${AUT_URL} = https://www.google.com</msg>
-<msg timestamp="20211128 12:10:29.002" level="INFO">${browser} chrome
+<msg timestamp="20211128 22:12:56.940" level="INFO">${browser} = chrome</msg>
+<msg timestamp="20211128 22:12:56.941" level="INFO">${browser_options} = ['--no-sandbox']</msg>
+<msg timestamp="20211128 22:12:56.942" level="INFO">${environment} = default</msg>
+<msg timestamp="20211128 22:12:56.943" level="INFO">${screenshot} = False</msg>
+<msg timestamp="20211128 22:12:56.944" level="INFO">${AUT_URL} = https://oauth-openshift.apps.rrodfdeploy.lab.eng.blr.redhat.com/</msg>
+<msg timestamp="20211128 22:12:56.944" level="INFO">${browser} chrome
 ${browser_options} ['--no-sandbox']
 ${environment} default
 ${screenshot} False
-${AUT_URL} https://www.google.com</msg>
-<status status="PASS" starttime="20211128 12:10:28.995" endtime="20211128 12:10:29.002"/>
+${AUT_URL} https://oauth-openshift.apps.rrodfdeploy.lab.eng.blr.redhat.com/</msg>
+<status status="PASS" starttime="20211128 22:12:56.938" endtime="20211128 22:12:56.944"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${AUT_URL}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20211128 12:10:29.002" endtime="20211128 12:10:29.002"/>
+<status status="PASS" starttime="20211128 22:12:56.944" endtime="20211128 22:12:56.944"/>
 </kw>
 <kw name="Setup Browser" library="config_setup">
 <arg>${AUT_URL}</arg>
 <arg>${browser}</arg>
 <arg>${browser_options}</arg>
-<status status="PASS" starttime="20211128 12:10:29.002" endtime="20211128 12:10:34.257"/>
+<status status="PASS" starttime="20211128 22:12:56.944" endtime="20211128 22:12:58.191"/>
 </kw>
-<status status="PASS" starttime="20211128 12:10:28.994" endtime="20211128 12:10:34.257"/>
+<status status="PASS" starttime="20211128 22:12:56.937" endtime="20211128 22:12:58.191"/>
 </kw>
-<kw name="Tear Down The Test Suite">
+<test id="s1-s1-s1-s1-t1" name="Scenario: The User Creates A Openshift Project With Kubeadmin Credentials">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Nothing</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211128 22:12:58.192" endtime="20211128 22:12:58.193"/>
+</kw>
+<status status="PASS" starttime="20211128 22:12:58.191" endtime="20211128 22:12:58.193"/>
+</test>
+<kw name="Tear Down The Test Suite" library="setup" type="TEARDOWN">
 <kw name="Log" library="BuiltIn">
 <arg>Tearing Down the Test Suite</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20211128 12:10:34.258" level="INFO">Tearing Down the Test Suite</msg>
-<status status="PASS" starttime="20211128 12:10:34.258" endtime="20211128 12:10:34.258"/>
+<msg timestamp="20211128 22:12:58.194" level="INFO">Tearing Down the Test Suite</msg>
+<status status="PASS" starttime="20211128 22:12:58.194" endtime="20211128 22:12:58.194"/>
 </kw>
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20211128 12:10:34.258" endtime="20211128 12:10:34.259"/>
+<status status="PASS" starttime="20211128 22:12:58.194" endtime="20211128 22:12:58.195"/>
 </kw>
-<status status="PASS" starttime="20211128 12:10:34.258" endtime="20211128 12:10:34.259"/>
+<status status="PASS" starttime="20211128 22:12:58.194" endtime="20211128 22:12:58.195"/>
 </kw>
-<status status="PASS" starttime="20211128 12:10:28.993" endtime="20211128 12:10:34.259"/>
-</test>
-<doc>Initial Setup and Validation for Login page
-Variables and Credentials loaded from config files</doc>
-<status status="PASS" starttime="20211128 12:10:28.808" endtime="20211128 12:10:34.260"/>
+<status status="PASS" starttime="20211128 22:12:56.766" endtime="20211128 22:12:58.195"/>
 </suite>
-<status status="PASS" starttime="20211128 12:10:28.806" endtime="20211128 12:10:34.263"/>
+<status status="PASS" starttime="20211128 22:12:56.765" endtime="20211128 22:12:58.196"/>
 </suite>
-<status status="PASS" starttime="20211128 12:10:28.804" endtime="20211128 12:10:34.264"/>
+<status status="PASS" starttime="20211128 22:12:56.763" endtime="20211128 22:12:58.197"/>
 </suite>
-<status status="PASS" starttime="20211128 12:10:28.780" endtime="20211128 12:10:34.266"/>
+<status status="PASS" starttime="20211128 22:12:56.739" endtime="20211128 22:12:58.198"/>
 </suite>
 <statistics>
 <total>
@@ -75,10 +78,10 @@ Variables and Credentials loaded from config files</doc>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="RHODA RFW">RHODA RFW</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">RHODA RFW.Tests</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Keywords">RHODA RFW.Tests.Keywords</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Setup">RHODA RFW.Tests.Keywords.Setup</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Rhoda Robotframework">Rhoda Robotframework</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">Rhoda Robotframework.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Test">Rhoda Robotframework.Tests.Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="TestLogin">Rhoda Robotframework.Tests.Test.TestLogin</stat>
 </suite>
 </statistics>
 <errors>
