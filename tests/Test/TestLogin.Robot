@@ -8,3 +8,4 @@ Suite Teardown   Tear Down The Test Suite
 *** Test Cases ***
 Scenario: The User Creates A Openshift Project With Kubeadmin Credentials
     Log To Console  Nothing
+    Log To Console  Nothing still
