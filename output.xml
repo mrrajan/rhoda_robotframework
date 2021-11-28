@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.9 on linux)" generated="20211128 12:10:28.776" rpa="false" schemaversion="2">
+<suite id="s1" name="RHODA RFW" source="/home/rravi/PycharmProjects/RHODA_RFW">
+<suite id="s1-s1" name="Tests" source="/home/rravi/PycharmProjects/RHODA_RFW/tests">
+<suite id="s1-s1-s1" name="Keywords" source="/home/rravi/PycharmProjects/RHODA_RFW/tests/Keywords">
+<suite id="s1-s1-s1-s1" name="Setup" source="/home/rravi/PycharmProjects/RHODA_RFW/tests/Keywords/setup.robot">
+<test id="s1-s1-s1-s1-t1" name="First Test">
+<kw name="Setup The Test Suite">
+<kw name="Log" library="BuiltIn">
+<arg>Setting up the Test Suite</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211128 12:10:28.995" level="INFO">Setting up the Test Suite</msg>
+<status status="PASS" starttime="20211128 12:10:28.994" endtime="20211128 12:10:28.995"/>
+</kw>
+<kw name="Set Library Search Order" library="BuiltIn">
+<arg>SeleniumLibrary</arg>
+<doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
+<status status="PASS" starttime="20211128 12:10:28.995" endtime="20211128 12:10:28.995"/>
+</kw>
+<kw name="Load Config Variables" library="config_setup">
+<msg timestamp="20211128 12:10:28.997" level="INFO">${browser} = chrome</msg>
+<msg timestamp="20211128 12:10:28.998" level="INFO">${browser_options} = ['--no-sandbox']</msg>
+<msg timestamp="20211128 12:10:29.000" level="INFO">${environment} = default</msg>
+<msg timestamp="20211128 12:10:29.001" level="INFO">${screenshot} = False</msg>
+<msg timestamp="20211128 12:10:29.002" level="INFO">${AUT_URL} = https://www.google.com</msg>
+<msg timestamp="20211128 12:10:29.002" level="INFO">${browser} chrome
+${browser_options} ['--no-sandbox']
+${environment} default
+${screenshot} False
+${AUT_URL} https://www.google.com</msg>
+<status status="PASS" starttime="20211128 12:10:28.995" endtime="20211128 12:10:29.002"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${AUT_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211128 12:10:29.002" endtime="20211128 12:10:29.002"/>
+</kw>
+<kw name="Setup Browser" library="config_setup">
+<arg>${AUT_URL}</arg>
+<arg>${browser}</arg>
+<arg>${browser_options}</arg>
+<status status="PASS" starttime="20211128 12:10:29.002" endtime="20211128 12:10:34.257"/>
+</kw>
+<status status="PASS" starttime="20211128 12:10:28.994" endtime="20211128 12:10:34.257"/>
+</kw>
+<kw name="Tear Down The Test Suite">
+<kw name="Log" library="BuiltIn">
+<arg>Tearing Down the Test Suite</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211128 12:10:34.258" level="INFO">Tearing Down the Test Suite</msg>
+<status status="PASS" starttime="20211128 12:10:34.258" endtime="20211128 12:10:34.258"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20211128 12:10:34.258" endtime="20211128 12:10:34.259"/>
+</kw>
+<status status="PASS" starttime="20211128 12:10:34.258" endtime="20211128 12:10:34.259"/>
+</kw>
+<status status="PASS" starttime="20211128 12:10:28.993" endtime="20211128 12:10:34.259"/>
+</test>
+<doc>Initial Setup and Validation for Login page
+Variables and Credentials loaded from config files</doc>
+<status status="PASS" starttime="20211128 12:10:28.808" endtime="20211128 12:10:34.260"/>
+</suite>
+<status status="PASS" starttime="20211128 12:10:28.806" endtime="20211128 12:10:34.263"/>
+</suite>
+<status status="PASS" starttime="20211128 12:10:28.804" endtime="20211128 12:10:34.264"/>
+</suite>
+<status status="PASS" starttime="20211128 12:10:28.780" endtime="20211128 12:10:34.266"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="RHODA RFW">RHODA RFW</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">RHODA RFW.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Keywords">RHODA RFW.Tests.Keywords</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Setup">RHODA RFW.Tests.Keywords.Setup</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

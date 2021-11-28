@@ -1,0 +1,5 @@
+browser: chrome
+browser_options: ['--no-sandbox']
+environment: default
+screenshot: false
+AUT_URL:  https://www.google.com
