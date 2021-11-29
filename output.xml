@@ -1,72 +1,191 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.9.9 on linux)" generated="20211128 12:10:28.776" rpa="false" schemaversion="2">
-<suite id="s1" name="RHODA RFW" source="/home/rravi/PycharmProjects/RHODA_RFW">
-<suite id="s1-s1" name="Tests" source="/home/rravi/PycharmProjects/RHODA_RFW/tests">
-<suite id="s1-s1-s1" name="Keywords" source="/home/rravi/PycharmProjects/RHODA_RFW/tests/Keywords">
-<suite id="s1-s1-s1-s1" name="Setup" source="/home/rravi/PycharmProjects/RHODA_RFW/tests/Keywords/setup.robot">
-<test id="s1-s1-s1-s1-t1" name="First Test">
-<kw name="Setup The Test Suite">
+<robot generator="Robot 4.1.2 (Python 3.9.9 on linux)" generated="20211129 13:20:11.364" rpa="false" schemaversion="2">
+<suite id="s1" name="Rhoda Robotframework" source="/home/rravi/PycharmProjects/rhoda_robotframework">
+<suite id="s1-s1" name="Tests" source="/home/rravi/PycharmProjects/rhoda_robotframework/tests">
+<suite id="s1-s1-s1" name="Test" source="/home/rravi/PycharmProjects/rhoda_robotframework/tests/Test">
+<suite id="s1-s1-s1-s1" name="TestCreateProject" source="/home/rravi/PycharmProjects/rhoda_robotframework/tests/Test/TestCreateProject.robot">
+<kw name="Setup The Test Suite" library="setup" type="SETUP">
 <kw name="Log" library="BuiltIn">
 <arg>Setting up the Test Suite</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20211128 12:10:28.995" level="INFO">Setting up the Test Suite</msg>
-<status status="PASS" starttime="20211128 12:10:28.994" endtime="20211128 12:10:28.995"/>
+<msg timestamp="20211129 13:20:11.581" level="INFO">Setting up the Test Suite</msg>
+<status status="PASS" starttime="20211129 13:20:11.580" endtime="20211129 13:20:11.581"/>
 </kw>
 <kw name="Set Library Search Order" library="BuiltIn">
 <arg>SeleniumLibrary</arg>
 <doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
-<status status="PASS" starttime="20211128 12:10:28.995" endtime="20211128 12:10:28.995"/>
+<status status="PASS" starttime="20211129 13:20:11.581" endtime="20211129 13:20:11.581"/>
 </kw>
 <kw name="Load Config Variables" library="config_setup">
-<msg timestamp="20211128 12:10:28.997" level="INFO">${browser} = chrome</msg>
-<msg timestamp="20211128 12:10:28.998" level="INFO">${browser_options} = ['--no-sandbox']</msg>
-<msg timestamp="20211128 12:10:29.000" level="INFO">${environment} = default</msg>
-<msg timestamp="20211128 12:10:29.001" level="INFO">${screenshot} = False</msg>
-<msg timestamp="20211128 12:10:29.002" level="INFO">${AUT_URL} = https://www.google.com</msg>
-<msg timestamp="20211128 12:10:29.002" level="INFO">${browser} chrome
-${browser_options} ['--no-sandbox']
+<msg timestamp="20211129 13:20:11.584" level="INFO">${browser} = chrome</msg>
+<msg timestamp="20211129 13:20:11.585" level="INFO">${browser_options} = add_argument("--ignore-certificate-errors");add_argument("window-size=1920,1024");add_argument('--no-sandbox');add_argument('--disable-gpu')</msg>
+<msg timestamp="20211129 13:20:11.586" level="INFO">${environment} = default</msg>
+<msg timestamp="20211129 13:20:11.588" level="INFO">${screenshot} = False</msg>
+<msg timestamp="20211129 13:20:11.589" level="INFO">${AUT_URL} = https://console-openshift-console.apps.rrodfdeploy.lab.eng.blr.redhat.com/</msg>
+<msg timestamp="20211129 13:20:11.589" level="INFO">${browser} chrome
+${browser_options} add_argument("--ignore-certificate-errors");add_argument("window-size=1920,1024");add_argument('--no-sandbox');add_argument('--disable-gpu')
 ${environment} default
 ${screenshot} False
-${AUT_URL} https://www.google.com</msg>
-<status status="PASS" starttime="20211128 12:10:28.995" endtime="20211128 12:10:29.002"/>
+${AUT_URL} https://console-openshift-console.apps.rrodfdeploy.lab.eng.blr.redhat.com/</msg>
+<status status="PASS" starttime="20211129 13:20:11.581" endtime="20211129 13:20:11.589"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${AUT_URL}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20211128 12:10:29.002" endtime="20211128 12:10:29.002"/>
+<status status="PASS" starttime="20211129 13:20:11.589" endtime="20211129 13:20:11.589"/>
 </kw>
-<kw name="Setup Browser" library="config_setup">
+<kw name="Set Kubeadmin Password" library="credentials">
+<msg timestamp="20211129 13:20:11.590" level="INFO">Into Kubeadmin</msg>
+<msg timestamp="20211129 13:20:11.591" level="INFO">${KUBEADMIN_PASSWD} = qFQEF-z2pzm-Nmr9U-3onAv
+</msg>
+<status status="PASS" starttime="20211129 13:20:11.590" endtime="20211129 13:20:11.591"/>
+</kw>
+<status status="PASS" starttime="20211129 13:20:11.580" endtime="20211129 13:20:11.591"/>
+</kw>
+<test id="s1-s1-s1-s1-t1" name="Scenario: The User Successfully Selects Create Project Button">
+<kw name="Given Login To Openshift" library="OpenshiftLogin" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
 <arg>${AUT_URL}</arg>
-<arg>${browser}</arg>
-<arg>${browser_options}</arg>
-<status status="PASS" starttime="20211128 12:10:29.002" endtime="20211128 12:10:34.257"/>
+<arg>browser=${browser}</arg>
+<arg>options=${browser_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211129 13:20:11.593" level="INFO">Opening browser 'chrome' to base url 'https://console-openshift-console.apps.rrodfdeploy.lab.eng.blr.redhat.com/'.</msg>
+<status status="PASS" starttime="20211129 13:20:11.593" endtime="20211129 13:20:15.504"/>
 </kw>
-<status status="PASS" starttime="20211128 12:10:28.994" endtime="20211128 12:10:34.257"/>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${title_loginpage}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211129 13:20:15.504" endtime="20211129 13:20:19.708"/>
 </kw>
-<kw name="Tear Down The Test Suite">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${txtbx_username}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20211129 13:20:19.737" level="INFO">Current page contains element '//input[@id="inputUsername"]'.</msg>
+<status status="PASS" starttime="20211129 13:20:19.709" endtime="20211129 13:20:19.737"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${txtbx_password}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20211129 13:20:19.750" level="INFO">Current page contains element '//input[@id="inputPassword"]'.</msg>
+<status status="PASS" starttime="20211129 13:20:19.737" endtime="20211129 13:20:19.750"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20211129 13:20:19.760" level="INFO">Current page contains element '//button[.="Log in"]'.</msg>
+<status status="PASS" starttime="20211129 13:20:19.750" endtime="20211129 13:20:19.760"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtbx_username}</arg>
+<arg>${login_page_username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211129 13:20:19.760" level="INFO">Typing text 'kubeadmin' into text field '//input[@id="inputUsername"]'.</msg>
+<status status="PASS" starttime="20211129 13:20:19.760" endtime="20211129 13:20:19.814"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtbx_password}</arg>
+<arg>${KUBEADMIN_PASSWD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211129 13:20:19.815" level="INFO">Typing text 'qFQEF-z2pzm-Nmr9U-3onAv
+' into text field '//input[@id="inputPassword"]'.</msg>
+<status status="PASS" starttime="20211129 13:20:19.814" endtime="20211129 13:20:20.969"/>
+</kw>
+<status status="PASS" starttime="20211129 13:20:11.592" endtime="20211129 13:20:20.970"/>
+</kw>
+<kw name="When The User Clicks On Create Project Button" library="OpenshiftProjects">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${lnk_nav_Projects}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211129 13:20:20.971" endtime="20211129 13:20:22.923"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lnk_nav_Projects}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211129 13:20:22.924" level="INFO">Clicking element '//a[contains(.,"Projects")]'.</msg>
+<status status="PASS" starttime="20211129 13:20:22.923" endtime="20211129 13:20:22.995"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${lbl_projects_title}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20211129 13:20:23.014" level="INFO">Current page contains element '//span[contains(.,"Projects")]'.</msg>
+<status status="PASS" starttime="20211129 13:20:22.995" endtime="20211129 13:20:23.014"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${btn_create_project}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20211129 13:20:23.025" level="INFO">Current page contains element '//button[@id="yaml-create"]'.</msg>
+<status status="PASS" starttime="20211129 13:20:23.014" endtime="20211129 13:20:23.025"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_create_project}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211129 13:20:23.026" level="INFO">Clicking element '//button[@id="yaml-create"]'.</msg>
+<status status="PASS" starttime="20211129 13:20:23.025" endtime="20211129 13:20:23.098"/>
+</kw>
+<status status="PASS" starttime="20211129 13:20:20.970" endtime="20211129 13:20:23.098"/>
+</kw>
+<kw name="Then Create Project Window Appears" library="OpenshiftProjects">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${frm_create_project}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20211129 13:20:23.488" level="INFO">Current page contains element '//h1[.="Create Project"]'.</msg>
+<status status="PASS" starttime="20211129 13:20:23.099" endtime="20211129 13:20:23.488"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${txtbx_create_prj_name}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20211129 13:20:23.552" level="INFO">Current page contains element '//input[@id="input-name"]'.</msg>
+<status status="PASS" starttime="20211129 13:20:23.488" endtime="20211129 13:20:23.552"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${txtbx_create_prj_display}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20211129 13:20:23.562" level="INFO">Current page contains element '//input[@id="input-display-name"]'.</msg>
+<status status="PASS" starttime="20211129 13:20:23.552" endtime="20211129 13:20:23.562"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${txtbx_create_prj_desc}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20211129 13:20:23.572" level="INFO">Current page contains element '//textarea[@id="input-description"]'.</msg>
+<status status="PASS" starttime="20211129 13:20:23.562" endtime="20211129 13:20:23.572"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${btn_create_prj_create}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20211129 13:20:23.582" level="INFO">Current page contains element '//button[@id="confirm-action"]'.</msg>
+<status status="PASS" starttime="20211129 13:20:23.572" endtime="20211129 13:20:23.582"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${btn_create_prj_cancel}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20211129 13:20:23.592" level="INFO">Current page contains element '//button[contains(.,"Cancel")]'.</msg>
+<status status="PASS" starttime="20211129 13:20:23.582" endtime="20211129 13:20:23.592"/>
+</kw>
+<status status="PASS" starttime="20211129 13:20:23.099" endtime="20211129 13:20:23.592"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211129 13:20:23.592" endtime="20211129 13:20:23.649"/>
+</kw>
+<status status="PASS" starttime="20211129 13:20:11.592" endtime="20211129 13:20:23.649"/>
+</test>
+<kw name="Tear Down The Test Suite" library="setup" type="TEARDOWN">
 <kw name="Log" library="BuiltIn">
 <arg>Tearing Down the Test Suite</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20211128 12:10:34.258" level="INFO">Tearing Down the Test Suite</msg>
-<status status="PASS" starttime="20211128 12:10:34.258" endtime="20211128 12:10:34.258"/>
+<msg timestamp="20211129 13:20:23.651" level="INFO">Tearing Down the Test Suite</msg>
+<status status="PASS" starttime="20211129 13:20:23.651" endtime="20211129 13:20:23.651"/>
 </kw>
-<kw name="Close All Browsers" library="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20211128 12:10:34.258" endtime="20211128 12:10:34.259"/>
+<status status="PASS" starttime="20211129 13:20:23.650" endtime="20211129 13:20:23.651"/>
 </kw>
-<status status="PASS" starttime="20211128 12:10:34.258" endtime="20211128 12:10:34.259"/>
-</kw>
-<status status="PASS" starttime="20211128 12:10:28.993" endtime="20211128 12:10:34.259"/>
-</test>
-<doc>Initial Setup and Validation for Login page
-Variables and Credentials loaded from config files</doc>
-<status status="PASS" starttime="20211128 12:10:28.808" endtime="20211128 12:10:34.260"/>
+<status status="PASS" starttime="20211129 13:20:11.396" endtime="20211129 13:20:23.651"/>
 </suite>
-<status status="PASS" starttime="20211128 12:10:28.806" endtime="20211128 12:10:34.263"/>
+<status status="PASS" starttime="20211129 13:20:11.394" endtime="20211129 13:20:23.653"/>
 </suite>
-<status status="PASS" starttime="20211128 12:10:28.804" endtime="20211128 12:10:34.264"/>
+<status status="PASS" starttime="20211129 13:20:11.392" endtime="20211129 13:20:23.654"/>
 </suite>
-<status status="PASS" starttime="20211128 12:10:28.780" endtime="20211128 12:10:34.266"/>
+<status status="PASS" starttime="20211129 13:20:11.367" endtime="20211129 13:20:23.655"/>
 </suite>
 <statistics>
 <total>
@@ -75,10 +194,10 @@ Variables and Credentials loaded from config files</doc>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="RHODA RFW">RHODA RFW</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">RHODA RFW.Tests</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Keywords">RHODA RFW.Tests.Keywords</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Setup">RHODA RFW.Tests.Keywords.Setup</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Rhoda Robotframework">Rhoda Robotframework</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">Rhoda Robotframework.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Test">Rhoda Robotframework.Tests.Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="TestCreateProject">Rhoda Robotframework.Tests.Test.TestCreateProject</stat>
 </suite>
 </statistics>
 <errors>
