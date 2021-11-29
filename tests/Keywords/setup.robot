@@ -5,7 +5,7 @@ Library     BuiltIn
 Library     Collections
 Library     SeleniumLibrary
 Library    ../../scripts/config_setup.py
-Library     ../../scripts/vars.py
+Library     ../../scripts/credentials.py
 
 
 *** Keywords ***
@@ -14,8 +14,8 @@ Setup The Test Suite
     Set Library Search Order    SeleniumLibrary
     Load Config Variables
     Log To Console  ${AUT_URL}
-    Setup Browser  ${AUT_URL}   ${browser}  ${browser_options}
+    Set Kubeadmin Password
 
 Tear Down The Test Suite
     Log     Tearing Down the Test Suite
-    Close All Browsers
+

@@ -1,0 +1,10 @@
+*** Variables ***
+${lnk_nav_Projects}    //a[contains(.,"Projects")]
+${lbl_projects_title}   //span[contains(.,"Projects")]
+${btn_create_project}   //button[@id="yaml-create"]
+${frm_create_project}     //h1[.="Create Project"]
+${txtbx_create_prj_name}    //input[@id="input-name"]
+${txtbx_create_prj_display}    //input[@id="input-display-name"]
+${txtbx_create_prj_desc}    //textarea[@id="input-description"]
+${btn_create_prj_create}    //button[@id="confirm-action"]
+${btn_create_prj_cancel}    //button[contains(.,"Cancel")]

@@ -1,5 +1,5 @@
 browser: chrome
-browser_options: ['--no-sandbox']
+browser_options: add_argument("--ignore-certificate-errors");add_argument("window-size=1920,1024");add_argument('--no-sandbox');add_argument('--disable-gpu')
 environment: default
 screenshot: false
-AUT_URL: https://oauth-openshift.apps.rrodfdeploy.lab.eng.blr.redhat.com/
+AUT_URL: https://console-openshift-console.apps.rrodfdeploy.lab.eng.blr.redhat.com/

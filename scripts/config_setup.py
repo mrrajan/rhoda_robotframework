@@ -1,6 +1,5 @@
 import os
 import yaml
-import browser_setup
 from robot.libraries.BuiltIn import BuiltIn
 
 
@@ -15,8 +14,3 @@ def load_config_variables():
     except Exception as e:
         print(str(e))
         BuiltIn().fail(msg="Failed to read file, Exception " + str(e) + "occurred")
-
-
-def setup_browser(url: str, browser: str = "chrome", browser_options: list = []):
-    driver = browser_setup.create_web_driver(url, browser, browser_options)
-    driver.get(url)
